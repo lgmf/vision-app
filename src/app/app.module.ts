@@ -13,6 +13,7 @@ import { Camera } from '@ionic-native/camera';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { VisionPage } from '../pages/vision/vision';
+import { VisionPageModule } from '../pages/vision/vision.module';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA37kGREo66cOI_2ARmIbLf0G1N0K92Hkk",
@@ -26,21 +27,20 @@ const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    VisionPage
+    HomePage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    VisionPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    VisionPage
+    HomePage
   ],
   providers: [
     StatusBar,
